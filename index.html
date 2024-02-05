@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA MAS PIJA DE MARTOS</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f67f7f;
+        }
+
+        #envelope {
+            position: relative;
+            width: 75%;
+            height: 95%px;
+            background-color: #f29797;
+            border: 2px solid #f29797;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            overflow: visible; /* Permite que el contenido de #hiddenContent se vea fuera del sobre */
+        }
+
+        #address {
+            margin-top: 25%;
+            font-size: 35px;
+            color: #333;
+        }
+
+        #logo {
+            max-width: 40%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        #triangle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent; /* Ajusta el tamaño del triángulo según tus preferencias */
+            border-right: 150px solid transparent;
+            border-top: 90px solid #ffcccc; /* Color rosa claro */
+            transition: transform 0.5s; /* Agrega transición para animar el triángulo */
+        }
+
+        #hiddenContent {
+            position: absolute;
+            top: -50px; /* Ajusta este valor para cambiar la posición vertical */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%; /* Ajusta el ancho según tus preferencias */
+            background-color: #6fa8dc; /* Fondo verde azulado */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Inicialmente oculta la carta */
+            transition: opacity 0.5s; /* Agrega transición para animar la carta */
+            z-index: 1; /* Asegura que #hiddenContent esté sobre #envelope */
+        }
+
+        .show-card #triangle {
+            transform: translateX(-50%) translateY(-150%);
+        }
+
+        .show-card #hiddenContent {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="envelope">
+    <div id="triangle"></div>
+    <div id="address">
+        <p>Destinatario: Ainhoa, la pijilla de Bellas Artes</p>
+        <p>Dirección: Segunda estrella a la derecha y todo recto hasta el amanecer
+        </p>
+    </div>
+    <img id="logo" src="Cervezas-Alhambra-presenta-MINI-Reserva_1730837686_168618513_667x375.png" alt="Tu Logo">
+    <div id="hiddenContent">
+        <p>Mira que odio San Valentin con todas mis ganas pero bueno , aqui va un programador aburrido haciendo sus mierdas. Es bromita esta carata en verdad solo hago para que sepas que algo se te echa de menos, no mucho pero algo ,vaya a ser que te emociones jajaja que tenemos que hacer más cosas por Grana, ver mas gansos, ir a mas pueblecillos , mas risas y aunque se  no te  haga gracia mas barecillos pero te lo cambio cuando quieras por un taper y algun mirador para que no falten risas,me debes una promesa la de llevare a la nueva pasteleria , también hago esto para que a ver si se te alegran los dias por alli aparte de estar con tu gente por los temas que ya sabemos de casa y mas , y para que veas que algo bopnito se decir solo te digo, que flipan tus ojazos fue lo primero en lo que me fije y me que me encanta cuando te ries aunque a veces parezcas una loca por eso siempre te lo intento recordar estes donde estes pijilla de Bellas Artes que tienes una paciencia que pocos tendrían y te lo dice alguien que ha tenido amistades "complicadas" , que cuado te agobies si quieres mi telefono esta disponible para que puedas desahogarte o simplemente para que me cuentes que te ha pasado una toneria y te ha alegrado el dia. Pues nada pues, eso SO SER, un abracico y un besico virtual.</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('envelope').addEventListener('click', function() {
+        var envelope = document.getElementById('envelope');
+        envelope.classList.toggle('show-card');
+    });
+</script>
+
+</body>
+</html>
